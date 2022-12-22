@@ -4,31 +4,39 @@ let mapOpen = false;
 
 let menuButton = document.getElementsByClassName('menuButton')
 let menuText = document.getElementsByClassName('menuText')
-let lineSvg = document.getElementsByClassName('line-svg')
+let mySvg = document.getElementsByClassName('mySvg')
 
 menuButton[0].addEventListener("click", animate);
 
 function animate() {
-if(mapOpen){
+if(mapOpen === false){
+    console.log("OPENING")
     mapOpen = true
     menuText[0].classList.add('menuTextTransition')
     menuText[1].classList.add('menuTextTransition')
     menuText[2].classList.add('menuTextTransition')
   
-    lineSvg[0].classList.add('line-svg-animate')
+    mySvg[0].classList.remove('line-svg-animate-rev')
+    mySvg[0].classList.add('line-svg-animate')
   
     setTimeout(function() {
-      lineSvg[0].classList.remove('line-svg')
+      mySvg[0].classList.remove('line-svg')
     }, 1000);
-}
+}else{
+  mapOpen = false;
+    menuText[0].classList.remove('menuTextTransition')
+    menuText[1].classList.remove('menuTextTransition')
+    menuText[2].classList.remove('menuTextTransition')
 
-if(!mapOpen){
-    mapOpen = false
-    
-}
-  
 
+
+    mySvg[0].classList.remove('line-svg-animate')
+    mySvg[0].classList.add('line-svg-animate-rev')
   
+    setTimeout(function() {
+      mySvg[0].classList.add('line-svg')
+    }, 2000);
+}
 }
 
 // path.style.strokeDasharray = pathLength + ' ' + pathLength;

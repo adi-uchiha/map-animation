@@ -2,6 +2,12 @@
   animation: dash 1s linear;
 }
 
+.line-svg-animate-rev{
+  stroke-dasharray: 1;
+    stroke-dashoffset: 1;
+  animation: dash-rev 1s linear;
+}
+
 .line-svg {
     stroke-dasharray: 1;
     stroke-dashoffset: 1;
@@ -15,6 +21,16 @@
       stroke-dashoffset: 0;
     }
   }
+
+  @keyframes dash-rev {
+    from {
+      stroke-dashoffset: 0;
+    }
+    to {
+      stroke-dashoffset: 1;
+    }
+  }
+
 
  .menuTextParent{
   display: flex;
