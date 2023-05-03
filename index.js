@@ -1,7 +1,7 @@
 let svgpath = document.querySelector('path')
 let pathLength = svgpath.getTotalLength()
 let mapOpen = false;
-
+// Get by class names
 let menuButton = document.getElementsByClassName('menuButton')
 let menuText = document.getElementsByClassName('menuText')
 let mySvg = document.getElementsByClassName('mySvg')
